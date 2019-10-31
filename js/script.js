@@ -75,6 +75,11 @@ function dosearch(all) {
     var query = document.getElementById("searchbox").value;
     var found = 0;
     resultbox.innerHTML = "";
+
+    var fs = require('fs');
+    var files = fs.readdirSync('/papers');
+    console.log(files);
+
     for (var i=data.length - 1;i>=0;i--) {
         if ( matchSubs(data[i].name.toLowerCase(), query) != -1 || all)
         {
@@ -111,3 +116,4 @@ function populaterecent() {
 window.onload = function () {
     populaterecent();
 }
+
