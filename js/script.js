@@ -77,7 +77,8 @@ function dosearch(all) {
     resultbox.innerHTML = "";
 
     var fs = require('fs');
-    var files = fs.readdirSync('/papers');
+    var files = fs.readdirSync('/papers/');
+    console.log("hello");
     console.log(files);
 
     for (var i=data.length - 1;i>=0;i--) {
