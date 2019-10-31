@@ -78,8 +78,8 @@ function dosearch(all) {
 
     var fs = require('fs');
     var files = fs.readdirSync('/papers/');
-    console.log("hello");
-    console.log(files);
+    window.alert("hello");
+    window.alert(files);
 
     for (var i=data.length - 1;i>=0;i--) {
         if ( matchSubs(data[i].name.toLowerCase(), query) != -1 || all)
