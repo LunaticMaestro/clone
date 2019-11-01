@@ -55,7 +55,7 @@ function doSearch(year, kind){
     kind = getRadioValue("optradio");
 
     //retrieve matching papercode
-    var matchedPaperCodes = [];
+    var matchedPaperCodes = new Array();
     //  external var metadata
     for (var i=metadata.length - 1;i>=0;i--) {
         if ( matchSubstr(metadata[i], query) != -1)
@@ -167,4 +167,19 @@ function getRadioValue(name){
 // Start screeen work
 window.onload = function () {
     populateRecent();
+
+    
+// Get the input field
+var input = document.getElementById("search");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger
+    doSearch(year=0, kind ='')
+  }
+});
 }
